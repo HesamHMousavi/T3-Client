@@ -1,0 +1,146 @@
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Zoom-in effect */
+@keyframes zoomIn {
+  from {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Initially hidden */
+.plate-img {
+  position: relative;
+  width: 100%;
+  height: 700px;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.title-typing {
+  position: absolute;
+  left: 20px;
+  bottom: 10px;
+  font-size: 5rem;
+  color: #eee;
+  font-weight: 300;
+  z-index: 1000;
+  font-weight: 200 !important;
+}
+
+/* Image styling with animation */
+.plate-img img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+  display: block;
+  opacity: 0;
+  transform: scale(1.1);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Dark overlay fade-in */
+.plate-img::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+
+/* When in viewport */
+.plate-img.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.plate-img.visible img {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.plate-img.visible::after {
+  opacity: 1;
+}
+
+/* Typing effect */
+.title-typing {
+  overflow: hidden;
+  /* border-right: 0.05em solid rgb(255, 217, 0); */
+  /* white-space: nowrap; */
+  animation: typing 2.5s steps(100, end) forwards;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Responsive Styling */
+@media (max-width: 1200px) {
+  .title-typing {
+    font-size: 4rem;
+    /* left: 50px; */
+  }
+}
+
+@media (max-width: 992px) {
+  .plate-img {
+    height: 500px;
+  }
+  .title-typing {
+    font-size: 3rem;
+    /* left: 30px;
+    bottom: 0; */
+  }
+}
+
+@media (max-width: 768px) {
+  .plate-img {
+    height: 400px;
+  }
+  .title-typing {
+    font-size: 2.5rem;
+    /* left: 20px;
+    bottom: 0; */
+  }
+}
+
+@media (max-width: 576px) {
+  .plate-img {
+    height: 300px;
+  }
+  .title-typing {
+    font-size: 2rem;
+    left: 10px;
+    bottom: 0;
+    white-space: normal; 
+    word-wrap: break-word; 
+    max-width: 80%; 
+  }
+}
+

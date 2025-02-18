@@ -1,0 +1,178 @@
+button, input, select, textarea {
+  -webkit-appearance: none; 
+  appearance: none;
+  border-radius: 0;
+}
+
+
+
+.build-form {
+    width: 100%;
+    min-height: 400px;
+    display: flex;
+    padding: 2rem 1rem;
+    gap: 2rem;
+  }
+  
+  /* Left Section */
+  .build-form .left {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  /* Right Section */
+  .build-form .right {
+    width: 50%;
+  }
+  
+  /* Adjust Input & Select Layout */
+  .hor {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  /* Button Group */
+  .group-bottoms {
+    display: grid;
+    grid-template-columns: repeat(3, 170px);
+    justify-content: center;
+    gap: 1rem;
+    max-width: 542px;
+    margin: 0 auto;
+  }
+  
+  .group-bottoms .btn-item {
+    padding: 1rem 2rem;
+    cursor: pointer;
+    border: 1px solid #333;
+    background-color: #fff;
+    font-size: 14px;
+    text-align: center;
+    color: #333;
+  }
+  
+  .group-bottoms .selected {
+    background-color: #ffcc00;
+  }
+  
+  /* Input Container */
+  .number-input-con {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+  }
+  
+  /* Inputs & Selects */
+  .number-input {
+      width: 100%;
+      padding: 15px !important;
+      outline: none;
+      font-size: 18px;
+      border: 1px solid #aaa;
+      color: #333 ;
+      font-weight: 400;
+      margin-bottom: 10px;
+      max-width: 542px;
+      background-color: #fff;
+    }
+
+  
+  /* Placeholder Styling */
+  input::placeholder {
+    color: rgb(195, 195, 195);
+    opacity: 1;
+  }
+  
+  /* Add to Basket Button */
+  .add-basket {
+    transition: all 0.2s;
+    cursor: pointer;
+    margin-top: 2rem;
+    padding: 12px 1rem;
+    background-color: #ffcc00;
+    border: 1px solid #333;
+    font-size: 14px;
+    color:#333;
+  }
+  
+  .add-basket:hover {
+    transform: scale(1.05);
+  }
+  .center-btn{
+    display: flex;
+    justify-content: center;
+  }
+  .title-typing{
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    font-size: 2rem;
+    font-weight: 400;
+    width: fit-content;
+    animation: typing 2s steps(100, end) forwards;
+  }
+  
+  /* ========== RESPONSIVE STYLING ========== */
+  
+  /* Medium Screens */
+  @media (max-width: 1200px) {
+    .build-form {
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .number-input-con {
+        margin:0;
+        margin-top: 1rem;
+        max-width: none;
+      }
+  
+    .build-form .left,
+    .build-form .right {
+      width: 100%;
+    }
+  
+    .group-bottoms {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .title-typing {
+      font-size: 2.5rem;
+    }
+  }
+  
+  /* Small Screens */
+  @media (max-width: 768px) {
+    .build-form {
+      padding: 1rem;
+    }
+  
+    .group-bottoms {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.8rem;
+    }
+  
+    .number-input {
+      font-size: 14px;
+      padding: 10px;
+    }
+  }
+  
+  /* Extra Small Screens */
+  @media (max-width: 576px) {
+    .group-bottoms {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+  
+    .hor {
+      flex-direction: column;
+    }
+  }
+  

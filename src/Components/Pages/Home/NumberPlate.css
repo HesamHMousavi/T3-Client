@@ -1,0 +1,195 @@
+.plate-container {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  min-height: 400px;
+  max-height: 400px;
+  display: flex;
+  gap: 10px;
+}
+
+/* No text placeholder */
+.no-text {
+  margin-top: 2rem;
+  text-align: center;
+  height: 350px;
+  width: 100%;
+  font-size: 2.5rem;
+  color: #555;
+  font-weight: 100 !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Number plate styling */
+.number-plate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100%;
+  min-height: 150px;
+  font-size: 100px;
+  font-weight: bold;
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-family: Arial, sans-serif;
+  position: relative;
+  padding: 12px 25px;
+}
+
+/* Typing effect title */
+.title-typing-2 {
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0 auto;
+  font-size: 2rem;
+  font-weight: 400;
+  width: fit-content;
+  animation: typing-2 2s steps(100, end) infinite;
+}
+
+/* Typing effect */
+@keyframes typing-2 {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+/* Front & Rear plate styles */
+.front-plate {
+  background: #e6e6e6;
+}
+
+.rear-plate {
+  background: #ffcc00; /* Yellow */
+}
+
+.plate-text {
+  color: black;
+}
+
+/* Title styling */
+.build-title {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 50px;
+  font-weight: 300;
+  color: #aaa;
+}
+
+/* Fade In/Out Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.fade-out {
+  animation: fadeOut 0.5s ease-out forwards;
+}
+
+/* ======================= RESPONSIVE STYLES ======================= */
+
+/* Medium Screens (Tablets) */
+@media (max-width: 992px) {
+  .number-plate {
+    font-size: 80px;
+    min-height: 130px;
+  }
+
+  .no-text {
+    font-size: 2rem;
+  }
+
+  .build-title {
+    font-size: 40px;
+  }
+}
+
+/* Small Screens (Mobile) */
+@media (max-width: 768px) {
+  .plate-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .number-plate {
+    font-size: 60px;
+    min-height: 100px;
+    width: 90%;
+  }
+
+  .title-typing-2 {
+    font-size: 1.5rem;
+    text-align: center;
+    max-width: 80%;
+  }
+
+  .no-text {
+    font-size: 1.8rem;
+  }
+
+  .build-title {
+    font-size: 35px;
+  }
+}
+
+/* Extra Small Screens (Phones) */
+@media (max-width: 576px) {
+  .plate-container {
+    padding: 0;
+    min-height: 250px;
+    max-height: 300px;
+  }
+  .number-plate {
+    font-size: 40px;
+    min-height: 80px;
+    padding: 8px 15px;
+    width: 100%;
+  }
+
+  .title-typing-2 {
+    font-size: 1.2rem;
+    max-width: 100% !important;
+    word-wrap: break-word;
+  }
+
+  .no-text {
+    font-size: 1.5rem;
+  }
+
+  .build-title {
+    font-size: 30px;
+  }
+}

@@ -1,0 +1,250 @@
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Initially hidden */
+.contact-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 7rem 20px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* When in viewport */
+.contact-container.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.form-container {
+  background: white;
+  padding: 2rem;
+  width: 35%;
+  border: 1px solid #ccc;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Appear when visible */
+.contact-container.visible .form-container {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Form Styling */
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 200;
+  color: #aaa;
+}
+
+.input-group {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  outline: none;
+  font-size: 13px;
+  font-weight: 300;
+  color: #666;
+}
+
+.full-width {
+  margin-bottom: 1rem;
+}
+
+textarea {
+  height: 100px;
+}
+
+.submit-btn {
+  width: 100px;
+  padding: 10px;
+  background: #ffcc00;
+  border: none;
+  border: 1px solid #333;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  text-align: center;
+  display: block;
+  margin-top: 10px;
+  transition: all 0.2s;
+  color: #333;
+}
+
+.submit-btn:hover {
+  background: #e6b800;
+}
+
+/* Image Section */
+.image-container-contact {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  height: 100%;
+  position: relative;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Image appears when visible */
+.contact-container.visible .image-container-contact {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Image Styling */
+.car-image {
+  width: 100%;
+  max-width: 500px;
+  display: block;
+}
+
+/* Headlight Glow */
+.headlight-glow,
+.headlight-glow-2 {
+  position: absolute;
+  top: 195px;
+  width: 50px;
+  height: 50px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle,
+    rgb(246, 0, 0) 10%,
+    rgba(255, 255, 0, 0.3) 80%,
+    rgba(255, 255, 0, 0) 100%
+  );
+  filter: blur(5px);
+  border-radius: 50%;
+  animation: headlightBlink 0.4s infinite alternate ease-in-out;
+  pointer-events: none;
+}
+
+.headlight-glow {
+  left: 30.5%;
+}
+
+.headlight-glow-2 {
+  right: 25.8%;
+}
+
+/* Headlight Animation */
+@keyframes headlightBlink {
+  0% {
+    opacity: 0.4;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  100% {
+    opacity: 0.4;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* ============ RESPONSIVE STYLES ============ */
+
+/* Medium Screens (Tablets) */
+@media (max-width: 992px) {
+  .contact-container {
+    flex-direction: column;
+    padding: 5rem 20px;
+    gap: 2rem;
+  }
+
+  .form-container {
+    width: 60%;
+  }
+
+  .image-container-contact {
+    width: 80%;
+  }
+
+  .car-image {
+    max-width: 400px;
+  }
+}
+
+/* Small Screens (Mobile) */
+@media (max-width: 768px) {
+  .contact-container {
+    padding: 3rem 15px;
+  }
+
+  .form-container {
+    width: 80%;
+    padding: 1.5rem;
+  }
+
+  .image-container-contact {
+    width: 100%;
+  }
+
+  .car-image {
+    max-width: 350px;
+  }
+}
+
+/* Extra Small Screens (Phones) */
+@media (max-width: 576px) {
+  .contact-container {
+    padding: 2rem 10px;
+  }
+
+  .form-container {
+    width: 90%;
+    padding: 1.2rem;
+  }
+
+  .input-group {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .submit-btn {
+    width: 100%;
+  }
+
+  .image-container-contact {
+    width: 100%;
+  }
+
+  .car-image {
+    max-width: 300px;
+  }
+
+  .headlight-glow,
+  .headlight-glow-2 {
+    width: 40px;
+    height: 40px;
+    filter: blur(4px);
+  }
+}
+

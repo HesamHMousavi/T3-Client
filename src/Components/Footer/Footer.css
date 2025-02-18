@@ -1,0 +1,161 @@
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Initially hidden */
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  background-color: black;
+  color: white;
+  padding: 20px;
+  align-items: flex-start;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* When in viewport */
+.footer.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* Footer Image */
+.footer img {
+  object-fit: cover;
+  height: 50px;
+  opacity: 0;
+  max-width: 100%;
+  transform: scale(0.9);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Appear when visible */
+.footer.visible img {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.footer-title {
+  font-size: 30px;
+  font-weight: 200;
+  margin-bottom: 10px;
+}
+
+.footer-links p,
+.footer-store p {
+  margin: 5px 0;
+  font-size: 14px;
+  font-weight: 200;
+}
+
+.between {
+  height: 100% !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Social Icons */
+.between svg {
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+  transition: all 0.2s;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.footer.visible .between svg {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hover effect */
+.between svg:hover {
+  transform: scale(1.1);
+}
+
+.between-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Footer Logo */
+.footer-logo-img {
+  background-color: #f1c40f;
+  padding: 5px 10px;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 5px;
+  color: black;
+  text-align: center;
+  width: fit-content;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Appear when visible */
+.footer.visible .footer-logo-img {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Social Media Icons */
+.footer-social {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  font-size: 24px;
+}
+
+.social-icons i {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.social-icons i:hover {
+  color: #f1c40f;
+}
+
+/* ============ RESPONSIVE STYLES ============ */
+
+/* Medium Screens (Tablets) */
+@media (max-width: 992px) {
+  .footer{
+    flex-direction: column;
+    min-height: 700px;
+  }
+  .between {
+    gap:2rem;
+  }
+}
+
+
+

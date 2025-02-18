@@ -1,0 +1,195 @@
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Initially hidden */
+  .accs {
+    padding: 2rem;
+    opacity: 0;
+    margin-bottom: 2rem;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+  }
+
+  .accs button{
+    color: #333;
+  }
+
+  .acc-title{
+    text-align: center;
+    margin-bottom: 3rem;
+    font-weight: 300;
+    font-size: 50px;
+    color: #999;    
+  }
+  .accs.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .acc-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  
+  /* Image styling */
+  .acc-grid img {
+    max-height: 350px;
+    width: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    transform: scale(0.9);
+  }
+  
+  /* Appear one by one */
+  .accs.visible .acc-grid img {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+ 
+  /* Item text styling */
+  .acc-item h4 {
+    font-weight: 300;
+    font-size: 20px;
+    color: #999;
+    text-align: center;
+    margin-top: 1rem;
+  }
+  
+  .acc-item p {
+    font-weight: 250;
+    font-size: 15px;
+    color: #777;
+    text-align: center;
+  }
+  
+  /* Basket Button */
+  .btn-add-basket {
+    position: relative;
+    margin-top: 10px;
+    min-width: 120px;
+    padding: 10px 1rem;
+    background: #ffcc00;
+    border: 1px solid #333;
+    cursor: pointer;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Text & Icon Effects */
+  .btn-add-basket span {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: transform 0.3s ease-in-out;
+    white-space: nowrap;
+  }
+  
+  .btn-add-basket svg {
+    position: absolute;
+    right: -40px;
+    transition: right 0.3s ease-in-out;
+  }
+  
+  /* Hover effect */
+  .btn-add-basket:hover span {
+    transform: translateX(-600%);
+  }
+  
+  .btn-add-basket:hover svg {
+    right: 50%;
+    transform: translateX(50%);
+  }
+
+  /* ============ RESPONSIVE STYLES ============ */
+
+/* Medium Screens (Tablets) */
+@media (max-width: 992px) {
+  .accs {
+    min-height: auto; /* Allow it to take height as needed */
+    height: auto; /* Remove any fixed height */
+  }
+
+  .acc-title {
+    font-size: 40px;
+  }
+
+  .acc-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns instead of 3 */
+    gap: 3rem;
+  }
+
+  .acc-grid img {
+    max-height: 300px;
+  }
+}
+
+/* Small Screens (Mobile) */
+@media (max-width: 768px) {
+  .accs {
+    padding: 1rem;
+  }
+
+  .acc-title {
+    font-size: 35px;
+  }
+
+  .acc-grid {
+    max-height:none;
+    grid-template-columns: repeat(1, 1fr); /* 1 column layout */
+    gap: 2rem;
+  }
+
+  .acc-grid img {
+    max-height: 250px;
+  }
+
+  .btn-add-basket {
+    width: 100px;
+    font-size: 14px;
+  }
+}
+
+/* Extra Small Screens (Phones) */
+@media (max-width: 576px) {
+  .accs {
+    padding: 1rem;
+  }
+
+  .acc-title {
+    font-size: 30px;
+  }
+
+  .acc-grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+  }
+
+  .acc-grid img {
+    max-height: 200px;
+  }
+
+  .btn-add-basket {
+    width: 90px;
+    height: 35px;
+    font-size: 13px;
+  }
+}
+
+  

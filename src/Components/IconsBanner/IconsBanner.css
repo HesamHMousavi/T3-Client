@@ -1,0 +1,181 @@
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Initially hidden */
+  .feature-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 4rem 2rem;
+    background: #fafafa;
+    min-height: 200px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+  }
+  
+  /* When in viewport */
+  .feature-grid.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Feature card styling */
+  .feature-card {
+    text-align: center;
+    width: 200px;
+    cursor: pointer;
+    perspective: 1000px;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+  }
+  
+  /* Each feature card appears one by one */
+  .feature-grid.visible .feature-card {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  /* Flip effect on hover */
+  .feature-content {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+  }
+  
+  .feature-card:hover .feature-content {
+    transform: rotateY(180deg);
+  }
+  
+  /* Front and Back styling */
+  .feature-front,
+  .feature-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.07);
+    transition: all 0.4s ease-in-out;
+  }
+  
+  /* Front Icon */
+  .feature-front {
+    background: white;
+    font-size: 3rem;
+    color: #444 ;
+    transform: rotate(0deg);
+    transition: transform 0.6s ease-in-out;
+  }
+  
+ 
+  
+  /* Back of the card */
+  .feature-back {
+    background: #fff;
+    font-weight: 300;
+    font-size: 14px;
+    padding: 1rem;
+    transform: rotateY(180deg);
+    color: #333 !important;
+  }
+  
+  /* Title styling */
+  .feature-card h3 {
+    margin-top: 1rem;
+    font-size: 16px;
+    font-weight: 500;
+    color: #777;
+    font-weight: 200;
+  }
+
+  /* ============ RESPONSIVE STYLES ============ */
+
+/* Medium Screens (Tablets) */
+@media (max-width: 992px) {
+  .feature-grid {
+    gap: 2rem;
+    padding: 3rem 1.5rem;
+  }
+
+  .feature-card {
+    width: 180px;
+  }
+
+  .feature-front {
+    font-size: 2.5rem;
+  }
+
+  .feature-card h3 {
+    font-size: 14px;
+  }
+}
+
+/* Small Screens (Mobile) */
+@media (max-width: 768px) {
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 1.5rem;
+    padding: 2.5rem 1rem;
+  }
+
+  .feature-card {
+    width: 100%;
+  }
+
+  .feature-content {
+    height: 180px;
+  }
+
+  .feature-front {
+    font-size: 2rem;
+  }
+
+  .feature-card h3 {
+    font-size: 13px;
+  }
+}
+
+/* Extra Small Screens (Phones) */
+@media (max-width: 576px) {
+  .feature-grid {
+    grid-template-columns: repeat(2, 1fr); /* Ensuring 2 columns on smaller devices */
+    padding: 2rem 0.8rem;
+    gap: 1rem;
+  }
+
+  .feature-card {
+    width: 100%;
+  }
+
+  .feature-content {
+    height: 160px;
+  }
+
+  .feature-front {
+    font-size: 1.8rem;
+  }
+
+  .feature-card h3 {
+    font-size: 15px;
+  }
+}
+
+  
