@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
+import { ClientContext } from "../../../Context/ClientContext";
 import Header from "../../Header/Header";
 import PlateImage from "../../PlateImage/PlateImage";
 import BuildForm from "./BuildForm";
@@ -10,6 +11,15 @@ import ContactForm from "../../ContactForm/ContactForm";
 import Footer from "../../Footer/Footer";
 
 const HomePage = () => {
+  const { GetAllProducts, GetAllPlate, GetAllFAQs } = useContext(ClientContext);
+  useEffect(() => {
+    fetchData();
+  }, []);
+  const fetchData = async () => {
+    await GetAllProducts();
+    await GetAllPlate();
+    await GetAllFAQs();
+  };
   return (
     <div>
       <Header />

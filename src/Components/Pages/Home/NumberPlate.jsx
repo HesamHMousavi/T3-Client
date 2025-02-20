@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+
 import "./NumberPlate.css";
 
 const NumberPlate = ({ text = "", sides, spacing }) => {
@@ -33,10 +34,10 @@ const NumberPlate = ({ text = "", sides, spacing }) => {
           {sides === "Both" ? (
             <>
               <div className="number-plate front-plate">
-                <span className="plate-text">{displayText}</span>
+                <span className="plate-text style-1">{displayText}</span>
               </div>
               <div className="number-plate rear-plate">
-                <span className="plate-text">{displayText}</span>
+                <span className="plate-text style-1">{displayText}</span>
               </div>
             </>
           ) : sides === "Front" ? (

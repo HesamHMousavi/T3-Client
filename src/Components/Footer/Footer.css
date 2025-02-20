@@ -23,6 +23,10 @@
   transform: translateY(50px);
   transition: opacity 1s ease-out, transform 1s ease-out;
 }
+.footer a{
+  text-decoration: none;
+  color: #fff;
+}
 
 /* When in viewport */
 .footer.visible {

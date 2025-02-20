@@ -31,23 +31,28 @@ const ContactForm = () => {
 
   return (
     <div ref={contactRef} className="contact-container">
-      <div className="form-container">
+      <form
+        className="form-container"
+        action="https://formsubmit.co/d.3s@yahoo.com"
+        method="POST"
+      >
         <h2>Got an enquiry? Send us a message</h2>
         <div className="input-group">
-          <input type="text" placeholder="First Name" />
-          <input type="text" placeholder="Last Name" />
+          <input type="text" placeholder="First Name" name="First Name" />
+          <input type="text" placeholder="Last Name" name="Last Name" />
         </div>
         <div className="input-group">
-          <input type="email" placeholder="Email Address" />
-          <input type="number" placeholder="Phone Number" />
+          <input type="email" placeholder="Email Address" name="Email" />
+          <input type="number" placeholder="Phone Number" name="Number" />
         </div>
 
         <textarea
           placeholder="Type your message here..."
           className="full-width"
+          name="Message"
         ></textarea>
         <button className="submit-btn">SUBMIT</button>
-      </div>
+      </form>
 
       <div className="image-container-contact">
         <img src={carImage} alt="Car Illustration" className="car-image" />

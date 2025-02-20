@@ -4,8 +4,6 @@ button, input, select, textarea {
   border-radius: 0;
 }
 
-
-
 .build-form {
     width: 100%;
     min-height: 400px;
@@ -175,4 +173,22 @@ button, input, select, textarea {
       flex-direction: column;
     }
   }
+
+
+
+  
+  /* Adding a reflective light highlight */
+  .style-1::after {
+    content: attr(data-text);
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    width: 100%;
+    height: 100%;
+    color: rgba(255, 255, 255, 0.7);
+    opacity: 0.6;
+    clip-path: polygon(0 0, 100% 20%, 100% 0, 0% 100%);
+    z-index: 2;
+  }
+  
   

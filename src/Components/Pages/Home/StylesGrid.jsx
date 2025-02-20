@@ -1,16 +1,16 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useContext } from "react";
 import "./StylesGrid.css";
-import pic1 from "../../../Images/pic-1.webp";
-import pic2 from "../../../Images/pic-2.jpg";
-import pic5 from "../../../Images/pic-6.jpg";
-
-const images = [pic5, pic2, pic2, pic1];
+import { useNavigate } from "react-router-dom";
+import { ClientContext } from "../../../Context/ClientContext";
 
 const StylesGrid = () => {
+  const nav = useNavigate();
   const gridRef = useRef(null);
   const titleRef = useRef(null);
-  const [isTitleVisible, setIsTitleVisible] = useState(false);
-  const [isGridVisible, setIsGridVisible] = useState(false);
+  const { Plates } = useContext(ClientContext);
+  const [data, setData] = useState([]);
+  const [isTitleVisible, setIsTitleVisible] = useState(true);
+  const [isGridVisible, setIsGridVisible] = useState(true);
   const [visibleImages, setVisibleImages] = useState({});
 
   useEffect(() => {
@@ -44,8 +44,10 @@ const StylesGrid = () => {
       observer.observe(img);
     });
 
+    setData(Plates.slice(0, 4));
+
     return () => observer.disconnect();
-  }, []);
+  }, [Plates]);
 
   return (
     <>
@@ -59,20 +61,22 @@ const StylesGrid = () => {
         ref={gridRef}
         className={`styles-grid ${isGridVisible ? "visible" : ""}`}
       >
-        {images.map((img, index) => (
+        {data.map((item, index) => (
           <div
             key={index}
             className={`image-container ${
               visibleImages[index] ? "visible" : ""
             }`}
           >
-            <img src={img} alt={`Style ${index + 1}`} />
-            <div className="image-banner">Style {index + 1}</div>
+            <img src={item.Images[0]} alt={`${item.Style}`} />
+            <div className="image-banner">{item.Style}</div>
           </div>
         ))}
       </div>
       <div className="view-more-con">
-        <div className="view-more-btn">View More</div>
+        <div className="view-more-btn" onClick={() => nav("/plates")}>
+          View More
+        </div>
       </div>
     </>
   );

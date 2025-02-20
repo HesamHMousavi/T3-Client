@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import Img from "../../Images/logo-t3.jpeg";
+import { Link } from "react-router-dom";
 import { FaInstagram } from "react-icons/fa6";
 import "./Footer.css";
 
@@ -36,10 +37,18 @@ const Footer = () => {
         <div>
           <div className="footer-title">Quick Links</div>
           <div className="footer-links">
-            <p>Home</p>
-            <p>Plate Style</p>
-            <p>FAQ’s</p>
-            <p>Contact Us</p>
+            <p>
+              <Link to="/">Home</Link>
+            </p>
+            <p>
+              <Link to="/plates">Plate Style</Link>
+            </p>
+            <p>
+              <Link to="/faqs">FAQ’s</Link>
+            </p>
+            <p>
+              <Link to="/acc">Accessories</Link>
+            </p>
           </div>
         </div>
         <div>
@@ -55,13 +64,21 @@ const Footer = () => {
       <div className="between">
         <img src={Img} alt="Logo" className="footer-logo-img" />
         <div>
-          <div className="footer-title">Follow us</div>
+          <div className="footer-title" style={{ marginTop: "2rem" }}>
+            Follow us
+          </div>
           <div className="between-row">
             <div>
-              <FaInstagram />
-              <FaInstagram />
+              <FaInstagram
+                onClick={() =>
+                  window.open(
+                    "https://www.instagram.com/t333scustoms/",
+                    "_blank"
+                  )
+                }
+              />
             </div>
-            <span>@t333</span>
+            <span>@t333scustoms</span>
           </div>
         </div>
       </div>

@@ -23,6 +23,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+}
+.build-title{
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 14px;
 }
 
 /* Number plate styling */

@@ -13,7 +13,6 @@ const FAQsPage = () => {
       <Header />
       <PlateImage Img={Img} isFirst={true} Title={"FAQs"} />
       <FAQs />
-      <Acc />
       <ContactForm />
       <Footer />
     </div>

@@ -1,11 +1,13 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useContext } from "react";
 import logo from "../../Images/logo.jpeg";
 import { Link } from "react-router-dom";
 import { FaBars, FaShoppingCart } from "react-icons/fa";
+import { ClientContext } from "../../Context/ClientContext";
 import SlidingMenu from "./SlidingMenu";
 import "./Header.css";
 
 const Header = () => {
+  const { Basket } = useContext(ClientContext);
   const navbarRef = useRef(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const [isOpen, setOpen] = useState(false);
@@ -61,6 +63,7 @@ const Header = () => {
         <Link to="/faqs" className="hide">
           FAQS
         </Link>
+        {Basket.length > 0 && <div className="counter">{Basket.length}</div>}
         <Link to="/checkout" className="cart-icon">
           <FaShoppingCart />
         </Link>

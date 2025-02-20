@@ -42,12 +42,25 @@
 /* Cart Icon */
 .cart-icon {
   position: absolute;
-  right: 50px;
+  right: 40px;
   /* top: 50%; */
   transform: translateY(-50%);
   font-size: 24px;
   cursor: pointer;
 } 
+.counter{
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  right: 32px;
+  top: 38px;
+  background-color: #ffcc00;
+  padding: 3px;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 12px;
+  z-index: 4000;
+}
 
 /* When Navbar is in viewport */
 .navbar.visible {
@@ -66,6 +79,9 @@
 }
 
 @media (max-width: 768px) {
+  .counter{
+    left: 35px;
+  }
   .hide{
     display: none;
   }

@@ -31,6 +31,10 @@
     }
   }
 
+  .ass{
+    color: red;
+  }
+
   .flex{
     display: flex;
     gap: 10px;
@@ -196,4 +200,99 @@
   }
 
 }
+.image-preview {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  align-items: center;
+}
+
+.image-preview img {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.image-upload {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.image-box {
+  display: inline-flex;
+  width: 50px;
+  height: 50px;
+  border: 1px dashed #ccc;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 5px;
+  position: relative;
+}
+
+.image-box input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.image-box span {
+  font-size: 24px;
+  color: #666;
+}
+
+/* Container for each document preview (PDF or image) */
+.document-preview {
+  position: relative; /* Make sure the container has position: relative */
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.delete-document-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the icon */
+  color: #dc3545; 
+  cursor: pointer;
+  transition:  all 0.2s;
+  display: none; /* hidden initially */
+}
+
+/* Show the icon on hover */
+.document-preview:hover .delete-document-icon {
+  display: block;
+}
+
+/* The box that displays the plus sign to add more files */
+.image-box {
+  width: 50px;
+  height: 50px;
+  border: 2px dashed #ccc;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.image-box span {
+  font-size: 24px;
+  color: #ccc;
+}
+
+.image-box input[type="file"] {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0; /* Transparent so only the plus sign is visible */
+  cursor: pointer;
+}
+
   

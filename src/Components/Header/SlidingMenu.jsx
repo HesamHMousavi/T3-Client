@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "./SlidingMneu.css";
 import { FaShoppingCart } from "react-icons/fa";
 import { RxCross1 } from "react-icons/rx";
+import { ClientContext } from "../../Context/ClientContext";
 
 const SlidingMenu = ({ menuOpen, setMenuOpen, isOpen, onToggle }) => {
-  console.log(menuOpen);
+  const { Basket } = useContext(ClientContext);
   return (
     <div className={`sliding-menu ${menuOpen ? "open" : ""}`}>
+      {Basket.length > 0 && <div className="counter-1">{Basket.length}</div>}
       <button className="close-btn" onClick={() => setMenuOpen(false)}>
         <RxCross1 size={20} />
       </button>
