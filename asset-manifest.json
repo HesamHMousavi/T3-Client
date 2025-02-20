@@ -1,20 +1,18 @@
 {
   "files": {
-    "main.css": "/T3-Client/static/css/main.eebf1499.css",
-    "main.js": "/T3-Client/static/js/main.edcc098c.js",
+    "main.css": "/T3-Client/static/css/main.4694e36b.css",
+    "main.js": "/T3-Client/static/js/main.bff1c21f.js",
     "static/media/pic-6.jpg": "/T3-Client/static/media/pic-6.c52df2bfabf2b2a54b85.jpg",
     "static/media/pic-2.jpg": "/T3-Client/static/media/pic-2.4a63a5587a7d2ed67bce.jpg",
-    "static/media/pic-5.webp": "/T3-Client/static/media/pic-5.a9b40dacad94a41312c2.webp",
     "static/media/logo.jpeg": "/T3-Client/static/media/logo.5a685a6baaaf965fffbf.jpeg",
-    "static/media/pic-3.jpg": "/T3-Client/static/media/pic-3.193f7e716bdf41306f7b.jpg",
     "static/media/pic-1.webp": "/T3-Client/static/media/pic-1.3a4e4cff425c4f62e94a.webp",
     "static/media/logo-t3.jpeg": "/T3-Client/static/media/logo-t3.df125a9f0ba848e878c2.jpeg",
     "index.html": "/T3-Client/index.html",
-    "main.eebf1499.css.map": "/T3-Client/static/css/main.eebf1499.css.map",
-    "main.edcc098c.js.map": "/T3-Client/static/js/main.edcc098c.js.map"
+    "main.4694e36b.css.map": "/T3-Client/static/css/main.4694e36b.css.map",
+    "main.bff1c21f.js.map": "/T3-Client/static/js/main.bff1c21f.js.map"
   },
   "entrypoints": [
-    "static/css/main.eebf1499.css",
-    "static/js/main.edcc098c.js"
+    "static/css/main.4694e36b.css",
+    "static/js/main.bff1c21f.js"
   ]
 }
