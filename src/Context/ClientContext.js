@@ -16,6 +16,7 @@ import {
 } from "./Types";
 import ClientReducer from "./ClientReducer";
 import axios from "axios";
+// axios.defaults.baseURL = "http://localhost:5001/";
 axios.defaults.baseURL = "https://api.t333scustoms.co.uk/";
 export const ClientContext = createContext();
 
@@ -218,12 +219,21 @@ export const ClientState = (props) => {
           });
         }
       });
-
-      const resCus = await axios.post(`/api/customers`, {
-        Name: customer.Name,
-        Email: customer.Email,
-        Phone: customer.Phone,
+      const response = await axios.get("/api/csrf-token", {
+        withCredentials: true,
       });
+      axios.defaults.headers.common["csrf-token"] = response.data.csrfToken;
+      const resCus = await axios.post(
+        `/api/customers`,
+        {
+          Name: customer.Name,
+          Email: customer.Email,
+          Phone: customer.Phone,
+        },
+        {
+          withCredentials: true,
+        }
+      );
       const id = resCus.data?._id || resCus.data?.id;
       const order = {
         Customer: id,
@@ -240,7 +250,9 @@ export const ClientState = (props) => {
         Status: "pending",
         TotalPrice: formattedSubtotal,
       };
-      const res = await axios.post(`/api/orders`, order);
+      const res = await axios.post(`/api/orders`, order, {
+        withCredentials: true,
+      });
       return res.data;
     } catch (error) {
       console.error("Error creating order:", error);

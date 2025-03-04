@@ -1,0 +1,30 @@
+.scroll-top {
+    position: fixed;
+    height: 50px;
+    width: 50px;
+    right: 20px;
+    bottom: 20px;
+    background-color: #ffcc00;
+    z-index: 20000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 10px;
+
+    /* Animation setup */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* When visible, fade in and slide up */
+.scroll-top.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Optional hover effect */
+.scroll-top:hover {
+    transform: scale(1.1);
+}

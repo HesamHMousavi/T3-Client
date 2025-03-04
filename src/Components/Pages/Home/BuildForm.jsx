@@ -3,6 +3,7 @@ import NumberPlate from "./NumberPlate";
 import StylesGrid from "./StylesGrid";
 import { ClientContext } from "../../../Context/ClientContext";
 import "./BuildForm.css";
+import { RxCross1 } from "react-icons/rx";
 
 const BuildForm = () => {
   const { Plates, AddBasket, addAlert, isPlateLoading } =
@@ -75,15 +76,38 @@ const BuildForm = () => {
   };
 
   const formatPlate = (text) => {
-    // Insert a space if 'custom' spacing is selected
-    if (formData.spacing) {
-      return (
-        text.slice(0, Math.ceil(text.length / 2)) +
-        " " +
-        text.slice(Math.ceil(text.length / 2))
-      );
+    const length = text.length;
+
+    if (length < 1 || length > 7) {
+      return text; // In case input is invalid
     }
-    return text;
+
+    if (!formData.spacing) {
+      return text; // Return plain if spacing is off
+    }
+
+    let splitIndex;
+
+    switch (length) {
+      case 7:
+        splitIndex = 4;
+        break;
+      case 6:
+        splitIndex = 3;
+        break;
+      case 5:
+        splitIndex = 2;
+        break;
+      case 4:
+      case 3:
+      case 2:
+        splitIndex = 1;
+        break;
+      default:
+        return text;
+    }
+
+    return text.slice(0, splitIndex) + " " + text.slice(splitIndex);
   };
 
   return (
@@ -93,6 +117,7 @@ const BuildForm = () => {
           <NumberPlate
             text={formatPlate(formData.Number)}
             sides={formData.Side}
+            style={formData.Style}
           />
         </div>
         <div className="bottom">
@@ -170,6 +195,21 @@ const BuildForm = () => {
                 {item.Style}
               </button>
             ))}
+            {Plates?.length > 0 && formData.Plate !== "" && (
+              <button
+                className={`btn-item`}
+                onClick={() =>
+                  setFormData((prev) => ({
+                    ...prev,
+                    Plate: "",
+                    Style: "",
+                    Price: "",
+                  }))
+                }
+              >
+                <RxCross1 color="red" />
+              </button>
+            )}
           </div>
           <div className="center-btn">
             <button className="add-basket" onClick={AddToBasket}>
@@ -192,7 +232,7 @@ const BuildForm = () => {
             <span className="loader"></span>
           </div>
         ) : (
-          <StylesGrid />
+          <StylesGrid selected={formData} />
         )}
       </div>
     </div>

@@ -37,21 +37,24 @@ const PlatesGrid = () => {
         </div>
       ) : (
         state.map((item, idx) => (
-          <div key={idx} className="grid-container">
-            <span className="price-con">
-              <h2 className="grid-heading">{item.Style} </h2>
+          <div className="grid-container">
+            <div className="price-con">
+              <h2 className="grid-heading">{item.Style}</h2>
               <h4 className="price">£{item.Price}</h4>
-            </span>
-            <div className="grid">
-              {item.Images.map((img, index) => (
-                <div key={index} className="grid-item">
-                  <img
-                    src={img}
-                    alt={`plate-${index}`}
-                    className="grid-image"
-                  />
-                </div>
-              ))}
+            </div>
+            <div className="scroll-wrapper">
+              <div className="grid">
+                {item.Images.map((img, index) => (
+                  <div key={index} className="grid-item">
+                    <img
+                    onClick={()=> nav("/")}
+                      src={img}
+                      alt={`plate-${index}`}
+                      className="grid-image"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         ))

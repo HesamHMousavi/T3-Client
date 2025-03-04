@@ -23,7 +23,7 @@ const HomePage = () => {
   return (
     <div>
       <Header />
-      <PlateImage Img={Img2} isFirst={true} Title={"T3 CUSTOMS"} />
+      <PlateImage Img={Img2} isFirst={true} Title={""} />
       <BuildForm />
       <IconsBanner />
       <PlateImage Img={Img1} Title={"Premium Quality"} />

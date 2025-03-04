@@ -185,13 +185,13 @@ const CheckoutModal = () => {
     setLoading(true);
     const res = await CreateOrder(userData, formattedSubtotal);
     setLoading(false);
-    if (res.msg === "success") {
+    if (res?.msg === "success") {
       nav("/success");
       setTimeout(() => {
         window.location.reload();
       }, 100);
     } else {
-      addAlert("Something Went Wrong", "Error");
+      addAlert("Something Went Wrong", "error");
     }
   };
 

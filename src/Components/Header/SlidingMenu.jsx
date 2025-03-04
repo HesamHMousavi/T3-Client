@@ -23,7 +23,7 @@ const SlidingMenu = ({ menuOpen, setMenuOpen, isOpen, onToggle }) => {
         ACCESSORIES
       </Link>
       <Link to="/faqs" onClick={() => setMenuOpen(false)}>
-        CONTACT
+        FAQs
       </Link>
       <Link to="/checkout" onClick={() => setMenuOpen(false)}>
         <FaShoppingCart size={25} onClick={() => onToggle(!isOpen)} />

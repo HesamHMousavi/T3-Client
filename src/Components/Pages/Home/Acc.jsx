@@ -81,7 +81,7 @@ const Acc = () => {
               src={item.Images[0]}
               alt={item.name || `Accessory ${index + 1}`}
             />
-            <h4>{item.name || "Item Name"}</h4>
+            <h4>{item.Name || "Item Name"}</h4>
             <p>£{item.Price ?? 10}</p>
             <div style={{ display: "flex", justifyContent: "center" }}>
               <button
