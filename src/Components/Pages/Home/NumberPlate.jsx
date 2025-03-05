@@ -77,6 +77,7 @@ const NumberPlate = ({ text = "", sides, spacing, style }) => {
               >
                 {displayText}
               </span>
+              <span className="trade">T333s customs</span>
             </div>
           ) : (
             <div className="number-plate rear-plate">
@@ -86,6 +87,7 @@ const NumberPlate = ({ text = "", sides, spacing, style }) => {
               >
                 {displayText}
               </span>
+              <span className="trade">T333s customs</span>
             </div>
           )}
         </div>
